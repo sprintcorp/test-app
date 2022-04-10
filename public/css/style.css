@@ -21,3 +21,15 @@
     width: 150px;
 }
 
+footer{
+    position:absolute;
+    bottom:0;
+}
+
+.table-header{
+    background: #d2d2d2;
+}
+
+a{
+    text-decoration: none;
+}

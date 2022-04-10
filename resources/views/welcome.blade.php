@@ -63,6 +63,16 @@
         <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
     </symbol>
 
+    <symbol id="delete" viewBox="0 0 16 16">
+        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+    </symbol>
+
+    <symbol id="edit" viewBox="0 0 16 16">
+        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+    </symbol>
+
 
 </svg>
 
@@ -205,13 +215,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <form class="d-flex me-auto mb-2 mb-lg-0">
                             <div class="year-dropdown px-2">
-                                <select class="form-select">
-                                    <option>Year</option>
-                                    <option>2022</option>
-                                    <option>2021</option>
-                                    <option>2020</option>
-                                    <option>2019</option>
-                                </select>
+                                <input class="form-control" type="number" name="year" placeholder="Year"/>
                             </div>
                             <div class="input-group">
                                 <input class="form-control border-end-0 border" type="search" placeholder="search..." width="200" id="search"/>
@@ -283,7 +287,7 @@
 
                 <div class="row">
                     <div class="col-md-12 d-flex justify-content-end">
-                        <button class="btn btn-success">Add User</button>
+                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#createNewUser">Add User</button>
                     </div>
                 </div>
 
@@ -303,135 +307,239 @@
                 </div>
 
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
+                            <tr class="text-black-50 table-header">
+                                <th scope="col">Name</th>
+                                <th scope="col">Create Date</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1,001</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,002</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,003</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,004</td>
-                                <td>text</td>
-                                <td>random</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,005</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>1,006</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,007</td>
-                                <td>placeholder</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>irrelevant</td>
-                            </tr>
-                            <tr>
-                                <td>1,008</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                            </tr>
-                            <tr>
-                                <td>1,009</td>
-                                <td>placeholder</td>
-                                <td>irrelevant</td>
-                                <td>visual</td>
-                                <td>layout</td>
-                            </tr>
-                            <tr>
-                                <td>1,010</td>
-                                <td>data</td>
-                                <td>rich</td>
-                                <td>dashboard</td>
-                                <td>tabular</td>
-                            </tr>
-                            <tr>
-                                <td>1,011</td>
-                                <td>information</td>
-                                <td>placeholder</td>
-                                <td>illustrative</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,012</td>
-                                <td>text</td>
-                                <td>placeholder</td>
-                                <td>layout</td>
-                                <td>dashboard</td>
-                            </tr>
-                            <tr>
-                                <td>1,013</td>
-                                <td>dashboard</td>
-                                <td>irrelevant</td>
-                                <td>text</td>
-                                <td>visual</td>
-                            </tr>
-                            <tr>
-                                <td>1,014</td>
-                                <td>dashboard</td>
-                                <td>illustrative</td>
-                                <td>rich</td>
-                                <td>data</td>
-                            </tr>
-                            <tr>
-                                <td>1,015</td>
-                                <td>random</td>
-                                <td>tabular</td>
-                                <td>information</td>
-                                <td>text</td>
-                            </tr>
+                                <tr>
+                                    <td>random</td>
+                                    <td>data</td>
+                                    <td>placeholder</td>
+                                    <td>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#editUser" class="px-2">
+                                            <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">
+                                                <use xlink:href="#edit"/>
+                                            </svg>
+                                        </a>
+
+                                        <a href="#">
+                                            <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">
+                                                <use xlink:href="#delete"/>
+                                            </svg>
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+
+
+
+{{--               User create modal--}}
+                <div class="modal fade" id="createNewUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addUser" aria-hidden="true">
+
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content">
+                                <form>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addUser">Add User</h5>
+                                    <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12">
+                                            <input type="text" name="employee_id" class="form-control" id="employee_id" placeholder="Employee ID*">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name*">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="number" name="phone" class="form-control" id="phone" placeholder="Phone*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select class="form-select" name="role" id="role">
+                                                <option>role</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <input type="text" name="username" class="form-control" id="username" placeholder="Username*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Confirm Password*">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless table-sm">
+                                                <thead>
+                                                <tr class="text-black-50 table-header p-5">
+                                                    <th scope="col">Module Permission</th>
+                                                    <th scope="col">Read</th>
+                                                    <th scope="col">Write</th>
+                                                    <th scope="col">Delete</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>Super Admin</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary btn-sm rounded-4">Add User</button>
+                                    <button type="button" class="btn btn-sm rounded-4" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                </div>
+{{--               Create user modal end--}}
+
+
+
+                {{--               Edit user modal--}}
+                <div class="modal fade" id="editUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="updateUser" aria-hidden="true">
+
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="updateUser">Edit User Information</h5>
+                                    <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12">
+                                            <input type="text" name="employee_id" class="form-control" id="employee_id" placeholder="Employee ID*">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name*">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="number" name="phone" class="form-control" id="phone" placeholder="Phone*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select class="form-select" name="role" id="role">
+                                                <option>role</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <input type="text" name="username" class="form-control" id="username" placeholder="Username*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password*">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Confirm Password*">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless table-sm">
+                                                <thead>
+                                                <tr class="text-black-50 table-header p-5">
+                                                    <th scope="col">Module Permission</th>
+                                                    <th scope="col">Read</th>
+                                                    <th scope="col">Write</th>
+                                                    <th scope="col">Delete</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>Super Admin</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary btn-sm rounded-4">Add User</button>
+                                    <button type="button" class="btn btn-sm rounded-4" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                {{--               Edit user modal end--}}
 
             </div>
             <footer class="p-4">
