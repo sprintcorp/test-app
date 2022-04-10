@@ -258,7 +258,10 @@
                                 <a href="#" class="nav-link" aria-current="page" title="Message" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                     <svg class="bi text-black" width="20" height="20" role="img" aria-label="message">
                                         <use xlink:href="#envelope"/>
+                                        <span class="position-absolute top-20 start-10 translate-middle p-1 bg-info border border-light rounded-circle">
+                                        </span>
                                     </svg>
+
                                 </a>
                             </li>
 
@@ -266,6 +269,8 @@
                                 <a href="#" class="nav-link" aria-current="page" title="Notification" data-bs-toggle="tooltip" data-bs-placement="bottom">
                                     <svg class="bi text-black" width="20" height="20" role="img" aria-label="notification">
                                         <use xlink:href="#notification"/>
+                                        <span class="position-absolute top-20 start-20 translate-middle p-1 bg-info border border-light rounded-circle">
+                                        </span>
                                     </svg>
                                 </a>
                             </li>
