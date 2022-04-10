@@ -1,5 +1,6 @@
 body {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -103,9 +104,17 @@ a.nav-link.menu{
     -moz-user-select: none;
     user-select: none;
 }
-
+#menu-bar {
+    width: 280px;
+}
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 881px) {
+    #menu-bar {
+        width: 460px;
     }
 }

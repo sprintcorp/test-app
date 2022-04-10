@@ -51,6 +51,18 @@
         <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
     </symbol>
 
+    <symbol id="user-filled" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </symbol>
+
+    <symbol id="envelope" viewBox="0 0 16 16">
+        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+    </symbol>
+
+    <symbol id="notification" viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+    </symbol>
+
 
 </svg>
 
@@ -192,8 +204,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <form class="d-flex me-auto mb-2 mb-lg-0">
-                            <div class="input-group mr-5">
-                                <select class="form-control">
+                            <div class="year-dropdown px-2">
+                                <select class="form-select">
                                     <option>Year</option>
                                     <option>2022</option>
                                     <option>2021</option>
@@ -202,14 +214,16 @@
                                 </select>
                             </div>
                             <div class="input-group">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn" type="submit">
-                                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#search"/></svg>
-                                </button>
+                                <input class="form-control border-end-0 border" type="search" placeholder="search..." width="200" id="search"/>
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
+                                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#search"/></svg>
+                                    </button>
+                                </span>
                             </div>
                         </form>
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown px-2">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Language
                                 </a>
@@ -218,7 +232,7 @@
                                     <li><a class="dropdown-item" href="#">French</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown px-2">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Reports
                                 </a>
@@ -227,7 +241,7 @@
                                     <li><a class="dropdown-item" href="#">Weekly</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown px-2">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Project
                                 </a>
@@ -236,6 +250,29 @@
                                     <li><a class="dropdown-item" href="#">Project two</a></li>
                                 </ul>
                             </li>
+                            <li class="nav-item px-2">
+                                <a href="#" class="nav-link" aria-current="page" title="Message" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                    <svg class="bi text-black" width="20" height="20" role="img" aria-label="message">
+                                        <use xlink:href="#envelope"/>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-2">
+                                <a href="#" class="nav-link" aria-current="page" title="Notification" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                    <svg class="bi text-black" width="20" height="20" role="img" aria-label="notification">
+                                        <use xlink:href="#notification"/>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-2">
+                                <a href="#" class="nav-link" aria-current="page" title="User" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                    <svg class="bi text-black" width="20" height="20" role="img" aria-label="user">
+                                        <use xlink:href="#user-filled"/>
+                                    </svg>
+                                </a>
+                            </li>
 
                         </ul>
 
@@ -243,11 +280,162 @@
                 </div>
             </nav>
             <div class="content p-4">
-                <h4>Content Heading</h4>
+
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-end">
+                        <button class="btn btn-success">Add User</button>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-9 d-flex justify-content-start">
+                        <b>List Users</b>
+                    </div>
+
+                    <div class="col-md-3 d-flex justify-content-start">
+                        <input class="form-control border-end-0 border" type="search" placeholder="search..." width="200" id="search"/>
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#search"/></svg>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                                <th scope="col">Header</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1,001</td>
+                                <td>random</td>
+                                <td>data</td>
+                                <td>placeholder</td>
+                                <td>text</td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>placeholder</td>
+                                <td>irrelevant</td>
+                                <td>visual</td>
+                                <td>layout</td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>data</td>
+                                <td>rich</td>
+                                <td>dashboard</td>
+                                <td>tabular</td>
+                            </tr>
+                            <tr>
+                                <td>1,003</td>
+                                <td>information</td>
+                                <td>placeholder</td>
+                                <td>illustrative</td>
+                                <td>data</td>
+                            </tr>
+                            <tr>
+                                <td>1,004</td>
+                                <td>text</td>
+                                <td>random</td>
+                                <td>layout</td>
+                                <td>dashboard</td>
+                            </tr>
+                            <tr>
+                                <td>1,005</td>
+                                <td>dashboard</td>
+                                <td>irrelevant</td>
+                                <td>text</td>
+                                <td>placeholder</td>
+                            </tr>
+                            <tr>
+                                <td>1,006</td>
+                                <td>dashboard</td>
+                                <td>illustrative</td>
+                                <td>rich</td>
+                                <td>data</td>
+                            </tr>
+                            <tr>
+                                <td>1,007</td>
+                                <td>placeholder</td>
+                                <td>tabular</td>
+                                <td>information</td>
+                                <td>irrelevant</td>
+                            </tr>
+                            <tr>
+                                <td>1,008</td>
+                                <td>random</td>
+                                <td>data</td>
+                                <td>placeholder</td>
+                                <td>text</td>
+                            </tr>
+                            <tr>
+                                <td>1,009</td>
+                                <td>placeholder</td>
+                                <td>irrelevant</td>
+                                <td>visual</td>
+                                <td>layout</td>
+                            </tr>
+                            <tr>
+                                <td>1,010</td>
+                                <td>data</td>
+                                <td>rich</td>
+                                <td>dashboard</td>
+                                <td>tabular</td>
+                            </tr>
+                            <tr>
+                                <td>1,011</td>
+                                <td>information</td>
+                                <td>placeholder</td>
+                                <td>illustrative</td>
+                                <td>data</td>
+                            </tr>
+                            <tr>
+                                <td>1,012</td>
+                                <td>text</td>
+                                <td>placeholder</td>
+                                <td>layout</td>
+                                <td>dashboard</td>
+                            </tr>
+                            <tr>
+                                <td>1,013</td>
+                                <td>dashboard</td>
+                                <td>irrelevant</td>
+                                <td>text</td>
+                                <td>visual</td>
+                            </tr>
+                            <tr>
+                                <td>1,014</td>
+                                <td>dashboard</td>
+                                <td>illustrative</td>
+                                <td>rich</td>
+                                <td>data</td>
+                            </tr>
+                            <tr>
+                                <td>1,015</td>
+                                <td>random</td>
+                                <td>tabular</td>
+                                <td>information</td>
+                                <td>text</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
             </div>
             <footer class="p-4">
-                Footer content here
+                &copy; Copyright 2022 BingHR.io
             </footer>
         </div>
     </div>
