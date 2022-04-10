@@ -1,0 +1,24 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.5rem;
+    height: 100vh;
+    background: #1a73e8;
+}
+.page-wrapper {
+    margin-left: 3.5rem;
+    height: 100vh;
+}
+#menu-bar {
+    width: 340px;
+}
+.main-content {
+    height: 100%;
+    overflow: auto;
+}
+@media (max-width: 881px) {
+    #menu-bar {
+        width: 460px;
+    }
+}

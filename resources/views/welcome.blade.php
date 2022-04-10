@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Sidebars · Bootstrap v5.1</title>
+    <title>BingHR</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
 
@@ -15,25 +15,11 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('assets/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/sidebar.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 <body>
 
@@ -49,11 +35,27 @@
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
     </symbol>
 
+    <symbol id="calender" viewBox="0 0 16 16">
+        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+    </symbol>
+
+    <symbol id="user" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+    </symbol>
+
+    <symbol id="chat" viewBox="0 0 16 16">
+        <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+    </symbol>
+
+    <symbol id="file" viewBox="0 0 16 16">
+        <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+    </symbol>
+
 
 </svg>
 
-<main>
-    <div class="align-items-center d-flex flex-column flex-shrink-0 bg-info" style="width: 3.5rem;height: 100vh">
+{{--     Tool bar--}}
+    <div class="align-items-center d-flex flex-column flex-shrink-0 sidebar">
 
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center mt-5">
                 <li class="nav-item border-0">
@@ -64,30 +66,30 @@
                     </a>
                 </li>
                 <li class="nav-item border-0">
-                    <a href="#" class="nav-link py-3" aria-current="page" title="Search" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="search">
-                            <use xlink:href="#search"/>
+                    <a href="#" class="nav-link py-3" aria-current="page" title="Calender" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="calender">
+                            <use xlink:href="#calender"/>
                         </svg>
                     </a>
                 </li>
                 <li class="nav-item border-0">
-                    <a href="#" class="nav-link py-3" aria-current="page" title="Search" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="search">
-                            <use xlink:href="#search"/>
+                    <a href="#" class="nav-link py-3" aria-current="page" title="User" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="user">
+                            <use xlink:href="#user"/>
                         </svg>
                     </a>
                 </li>
                 <li class="nav-item border-0">
-                    <a href="#" class="nav-link py-3" aria-current="page" title="Search" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="search">
-                            <use xlink:href="#search"/>
+                    <a href="#" class="nav-link py-3" aria-current="page" title="Chat" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="chat">
+                            <use xlink:href="#chat"/>
                         </svg>
                     </a>
                 </li>
                 <li class="nav-item border-0">
-                    <a href="#" class="nav-link py-3" aria-current="page" title="Search" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="search">
-                            <use xlink:href="#search"/>
+                    <a href="#" class="nav-link py-3" aria-current="page" title="File" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <svg class="bi text-white" width="20" height="20" role="img" aria-label="file">
+                            <use xlink:href="#file"/>
                         </svg>
                     </a>
                 </li>
@@ -108,7 +110,7 @@
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
             </ul>
 
-            <a href="#" title="menu" data-bs-toggle="tooltip" data-bs-placement="right" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none">
+            <a href="#" title="menu" data-bs-toggle="tooltip" onclick="toggleMenu()" data-bs-placement="right" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none">
                 <svg class="bi text-white" width="20" height="20" role="img" aria-label="menu">
                     <use xlink:href="#menu"/>
                 </svg>
@@ -116,77 +118,143 @@
         </div>
     </div>
 
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 210px;">
-        <ul class="nav nav-pills flex-column mt-4">
-            <li class="nav-item">
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu"  aria-current="page">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                    Users
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-                    Departments
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-                    Employees
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Activities
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Holidays
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Events
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Payrolls
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Accounts
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link menu link-dark">
-                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                    Reports
-                </a>
-            </li>
-        </ul>
+    <div class="d-flex page-wrapper">
+        <div class="d-none bg-light" id="menu-bar">
+            <ul class="nav nav-pills flex-column mt-4">
+                <li class="nav-item">
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu"  aria-current="page">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                        Users
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+                        Departments
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+                        Employees
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Activities
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Holidays
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Payrolls
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Accounts
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link menu link-dark">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light top-nav">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Users</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex me-auto mb-2 mb-lg-0">
+                            <div class="input-group mr-5">
+                                <select class="form-control">
+                                    <option>Year</option>
+                                    <option>2022</option>
+                                    <option>2021</option>
+                                    <option>2020</option>
+                                    <option>2019</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn" type="submit">
+                                    <svg class="bi me-2" width="16" height="16"><use xlink:href="#search"/></svg>
+                                </button>
+                            </div>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Language
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">French</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Reports
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Daily</a></li>
+                                    <li><a class="dropdown-item" href="#">Weekly</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Project
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Project one</a></li>
+                                    <li><a class="dropdown-item" href="#">Project two</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="content p-4">
+                <h4>Content Heading</h4>
+
+            </div>
+            <footer class="p-4">
+                Footer content here
+            </footer>
+        </div>
     </div>
-
-</main>
-
 
 <script src="{{asset('assets/dist/js/bootstrap.bundle.min.js')}}"></script>
 
 <script src="{{asset('js/sidebars.js')}}"></script>
+<script src="{{asset('js/application.js')}}"></script>
 </body>
 </html>
