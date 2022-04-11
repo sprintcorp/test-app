@@ -81,8 +81,10 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="role" id="role">
-                                    <option value="1">admin</option>
-                                    <option value="2">Hr</option>
+                                    <option value="1">Super Admin</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Employee</option>
+                                    <option value="4">Hr Admin</option>
                                 </select>
                             </div>
                         </div>
@@ -159,7 +161,7 @@
                         <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <ul id="errorList"></ul>
+                        <ul id="errorUpdateList"></ul>
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <input type="text" name="employee_id" class="form-control" id="edit_employee_id" placeholder="Employee ID*">
@@ -182,7 +184,10 @@
                             </div>
                             <div class="col-md-4">
                                 <select class="form-select" name="role" id="edit_role">
-                                    <option>role</option>
+                                    <option value="1">Super Admin</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Employee</option>
+                                    <option value="4">Hr Admin</option>
                                 </select>
                             </div>
                         </div>
@@ -190,6 +195,7 @@
                         <div class="row mb-3">
                             <div class="col-md-4">
                                 <input type="text" name="username" class="form-control" id="edit_username" placeholder="Username*">
+                                <input type="hidden" name="id" class="form-control" id="user_id">
                             </div>
                             <div class="col-md-4">
                                 <input type="password" name="password" class="form-control" id="edit_password" placeholder="Password*">
@@ -274,7 +280,7 @@
                                             <use xlink:href="#edit"/>\
                                         </svg>\
                                     </button>\
-                                    <button class="btn" value="'+value.id+'">\
+                                    <button class="btn delete-user" value="'+value.id+'">\
                                         <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">\
                                             <use xlink:href="#delete"/>\
                                         </svg>\
@@ -286,7 +292,76 @@
                 });
             }
 
+
+
             $(document).on('click','.edit-user',function (e) {
+                e.preventDefault();
+                var userId = $(this).val();
+                $('#editUser').modal('show');
+
+                $.ajax({
+                    type: "GET",
+                    url: '/users/'+userId,
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#user_id').val(response.data.id);
+                        $('#edit_firstname').val(response.data.firstname);
+                        $('#edit_lastname').val(response.data.lastname);
+                        $('#edit_email').val(response.data.email);
+                        $('#edit_username').val(response.data.username);
+                        $('#edit_phone').val(response.data.phone);
+                        $('#edit_employee_id').val(response.data.employee_id);
+                        $('#edit_role').val(response.data.role);
+                    },
+                });
+
+            });
+
+            $(document).on('click','.update-user',function (e){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                e.preventDefault();
+                const userId = $('#user_id').val();
+                var data = {
+                    'firstname': $('#edit_firstname').val(),
+                    'lastname': $('#edit_lastname').val(),
+                    'email': $('#edit_email').val(),
+                    'password': $('#edit_password').val(),
+                    'password_confirmation': $('#confirm_password').val(),
+                    'employee_id': $('#edit_employee_id').val(),
+                    'username': $('#edit_username').val(),
+                    'phone': $('#edit_phone').val(),
+                    'role': $('#edit_role').val(),
+                }
+                $.ajax({
+                    type: "PUT",
+                    url: '/update-user/'+userId,
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#errorUpdateList').html("");
+                        $('#success_message').addClass('alert alert-success alert-dismissible fade show');
+                        $('#success_message').text(data.message);
+                        $('#editUser').modal('hide');
+                        $('#editUser').find('input').val("");
+                        getUsers();
+                    },
+                    error:function (e){
+                        if(e.status==422){
+                            $('#errorUpdateList').html("");
+                            $('#errorUpdateList').addClass('alert alert-danger');
+                            $.each(e.responseJSON.errors,function (key,values){
+                                $('#errorUpdateList').append('<li>'+values+'</li>')
+                            });
+                        }
+                    }
+                });
+            })
+
+            $(document).on('click','.delete-user',function (e) {
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -294,32 +369,17 @@
                 });
                 e.preventDefault();
                 var userId = $(this).val();
-                console.log(userId);
-                $('#editUser').modal('show');
 
                 $.ajax({
-                    type: "POST",
+                    type: "DELETE",
                     url: '/users/'+userId,
-                    data: data,
                     dataType: 'json',
-                    success: function (data) {
-                        $('#errorList').html("");
+                    success: function (response) {
+                        console.log(response)
                         $('#success_message').addClass('alert alert-success alert-dismissible fade show');
-                        $('#success_message').text(data.message);
-                        $('#createNewUser').modal('hide');
-                        $('#createNewUser').find('input').val("");
+                        $('#success_message').text(response.message);
                         getUsers();
                     },
-                    error:function (e){
-                        if(e.status==422){
-
-                            $('#errorList').html("");
-                            $('#errorList').addClass('alert alert-danger');
-                            $.each(e.responseJSON.errors,function (key,values){
-                                $('#errorList').append('<li>'+values+'</li>')
-                            });
-                        }
-                    }
                 });
 
             });

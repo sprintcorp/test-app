@@ -45,12 +45,15 @@ class UserRepository implements UserInterface
     {
         $user = User::findorFail($id);
         $user->delete();
-        return true;
+        return response()->json([
+            'message'=>'User deleted successfully',
+            'status'=>200
+        ]);
     }
 
     public function getUser($id)
     {
-        $user = User::findorFail($id);
+        $user = User::with('userRole')->findorFail($id);
         return response()->json([
             'message'=>'User fetched successfully',
             'data'=>$user,

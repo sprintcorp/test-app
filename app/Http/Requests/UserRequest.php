@@ -25,10 +25,10 @@ class UserRequest extends FormRequest
     {
         if ($this->isMethod('PUT')) {
             return [
-                'employee_id' => 'required|string|unique:users,employee_id,'.request()->route()->parameter('id'),
-                'email' => 'required|string|email|max:100|unique:users,email,'.request()->route()->parameter('id'),
-                'username' => 'required|string|unique:users,username,'.request()->route()->parameter('id'),
-                'phone' => 'required|string|unique:users,phone,'.request()->route()->parameter('id'),
+                'employee_id' => 'required|string|unique:users,employee_id,'.request()->route('id'),
+                'email' => 'required|string|email|max:100|unique:users,email,'.request()->route('id'),
+                'username' => 'required|string|unique:users,username,'.request()->route('id'),
+                'phone' => 'required|string|unique:users,phone,'.request()->route('id'),
                 'firstname' => 'required|string',
                 'lastname' => 'required|string',
                 'password' => 'nullable|string|confirmed|min:8',
@@ -36,10 +36,10 @@ class UserRequest extends FormRequest
             ];
         }
         return [
-            'employee_id' => 'required|string|unique:users',
-            'email' => 'required|string|email|max:100|unique:users',
-            'username' => 'required|string|unique:users',
-            'phone' => 'required|string|unique:users',
+            'employee_id' => 'required|string|unique:users,deleted_at,NULL',
+            'email' => 'required|string|email|max:100|unique:users,deleted_at,NULL',
+            'username' => 'required|string|unique:users,deleted_at,NULL',
+            'phone' => 'required|string|unique:users,deleted_at,NULL',
             'firstname' => 'required|string',
             'lastname' => 'required|string',
             'password' => 'required|string|confirmed|min:8',
