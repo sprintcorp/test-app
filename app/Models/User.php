@@ -67,10 +67,12 @@ class User extends Authenticatable
             $model->password = Hash::make(request()->password);
         });
 
-        if(request()->has('password')) {
-            static::updating(function ($model) {
+
+        static::updating(function ($model) {
+            if(request()->has('password')) {
                 $model->password = Hash::make(request()->password);
-            });
-        }
+            }
+        });
+
     }
 }

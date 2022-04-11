@@ -13,7 +13,11 @@ class UserRepository implements UserInterface
     public function createUser($data)
     {
         $user = User::create($data);
-        return $user;
+        return response()->json([
+            'message'=>'User added successfully',
+            'data'=>$user,
+            'status'=>201
+        ]);
     }
 
     public function updateUser($data, $id)
@@ -25,7 +29,7 @@ class UserRepository implements UserInterface
 
     public function getUsers()
     {
-        $user = User::paginate(10);
+        $user = User::with('userRole')->paginate(10);
         return $user;
     }
 

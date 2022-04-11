@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Http\Interfaces\UserInterface;
 use App\Http\Requests\UserRequest;
+//use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -16,8 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->user->getUsers();
-        return view('welcome',compact('users'));
+//        Alert::success('Success Title', 'Success Message');
+        return $this->user->getUsers();
+//        return view('welcome',compact('users'));
     }
 
 
@@ -29,7 +31,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        //
+        return $this->user->createUser($request->all());
     }
 
     /**
