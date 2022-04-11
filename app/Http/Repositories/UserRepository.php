@@ -24,14 +24,18 @@ class UserRepository implements UserInterface
     {
         $user = User::findorFail($id);
         $user->update($data);
-        return $user;
+        return response()->json([
+            'message'=>'User updated successfully',
+            'data'=>$user,
+            'status'=>200
+        ]);
     }
 
     public function getUsers()
     {
         $users = User::with('userRole')->paginate(10);
         return response()->json([
-            'message'=>'User fetched successfully',
+            'message'=>'Users fetched successfully',
             'data'=>$users,
             'status'=>200
         ]);
@@ -42,5 +46,15 @@ class UserRepository implements UserInterface
         $user = User::findorFail($id);
         $user->delete();
         return true;
+    }
+
+    public function getUser($id)
+    {
+        $user = User::findorFail($id);
+        return response()->json([
+            'message'=>'User fetched successfully',
+            'data'=>$user,
+            'status'=>200
+        ]);
     }
 }

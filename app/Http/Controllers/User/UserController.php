@@ -43,7 +43,12 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-        //
+        return $this->user->updateUser($request->all(),$id);
+    }
+
+    public function show($id)
+    {
+        return $this->user->getUser($id);
     }
 
     /**
@@ -54,6 +59,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->user->deleteUser($id);
     }
 }
