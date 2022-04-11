@@ -4,7 +4,7 @@ This solution is build using laravel 9, HTML, CSS, Bootstrap5 and Jquery. This a
 
 ## Implementation
 
-A model for User, Roles and Permission was created to help  question data to and from the table within the database. The Role and Permission has a `Many-To-Many` relationship because roles can have multiple permission and permission ca also have multiple roles, User has a `Many-To-One` relationship. The entry point of the application is `http://127.0.0.1:8000` `8000` serves as the port and may vary depending on which port you decide to expose the application to.
+A model for User, Roles and Permission was created to help  question data to and from the table within the database. The Role and Permission has a `Many-To-Many` relationship because roles can have multiple permission and permission ca also have multiple roles, User has a `Many-To-One` relationship. The entry point of the application is `http://127.0.0.1:8000`. `8000` serves as the port and may vary depending on which port you decide to expose the application to.
 
 ## Project setup
 
