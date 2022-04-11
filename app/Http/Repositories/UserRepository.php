@@ -5,27 +5,34 @@ namespace App\Http\Repositories;
 
 
 use App\Http\Interfaces\UserInterface;
+use App\Models\User;
 
 class UserRepository implements UserInterface
 {
 
     public function createUser($data)
     {
-        // TODO: Implement createUser() method.
+        $user = User::create($data);
+        return $user;
     }
 
     public function updateUser($data, $id)
     {
-        // TODO: Implement updateUser() method.
+        $user = User::findorFail($id);
+        $user->update($data);
+        return $user;
     }
 
     public function getUsers()
     {
-        // TODO: Implement getUsers() method.
+        $user = User::paginate(10);
+        return $user;
     }
 
     public function deleteUser($id)
     {
-        // TODO: Implement deleteUser() method.
+        $user = User::findorFail($id);
+        $user->delete();
+        return true;
     }
 }

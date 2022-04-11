@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -58,5 +59,18 @@ class User extends Authenticatable
     public function getFullName(): string
     {
         return $this->firstname.' '.$this->lastname;
+    }
+
+    protected static function booted()
+    {
+        static::creating(function ($model) {
+            $model->password = Hash::make(request()->password);
+        });
+
+        if(request()->has('password')) {
+            static::updating(function ($model) {
+                $model->password = Hash::make(request()->password);
+            });
+        }
     }
 }
