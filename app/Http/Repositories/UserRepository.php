@@ -16,7 +16,7 @@ class UserRepository implements UserInterface
         return response()->json([
             'message'=>'User added successfully',
             'data'=>$user,
-            'status'=>201
+            'status'=>200
         ]);
     }
 

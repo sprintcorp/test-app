@@ -118,17 +118,71 @@
                                         <td>Super Admin</td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Admin</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>HR Admin</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Employee</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
                                             </div>
                                         </td>
                                     </tr>
@@ -222,17 +276,71 @@
                                         <td>Super Admin</td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value="" id="permission" checked>
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Admin</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>HR Admin</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Employee</td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled checked>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="permission"  disabled>
                                             </div>
                                         </td>
                                     </tr>
