@@ -29,8 +29,12 @@ class UserRepository implements UserInterface
 
     public function getUsers()
     {
-        $user = User::with('userRole')->paginate(10);
-        return $user;
+        $users = User::with('userRole')->paginate(10);
+        return response()->json([
+            'message'=>'User fetched successfully',
+            'data'=>$users,
+            'status'=>200
+        ]);
     }
 
     public function deleteUser($id)

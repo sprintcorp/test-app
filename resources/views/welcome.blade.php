@@ -38,24 +38,7 @@
                 </thead>
                 <tbody id="all-users">
 {{--                @foreach($users as $user)--}}
-                    <tr id="">
-                        <td>Fred</td>
-                        <td>Date</td>
-                        <td>Role</td>
-                        <td>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#editUser" class="px-2">
-                                <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">
-                                    <use xlink:href="#edit"/>
-                                </svg>
-                            </a>
 
-                            <a href="#">
-                                <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">
-                                    <use xlink:href="#delete"/>
-                                </svg>
-                            </a>
-                        </td>
-                    </tr>
 {{--                @endforeach--}}
                 </tbody>
             </table>
@@ -278,10 +261,26 @@
                     url: '/users',
                     dataType: 'json',
                     success: function (response) {
-                        console.log(response);
-                        // $.each(e.responseJSON.errors,function (key,values){
-                        //     $('#errorList').append('<li>'+values+'</li>')
-                        // });
+                        console.log(response.data.data);
+                        $.each(response.data.data,function (key,value){
+                            $('#all-users').append('<tr>\
+                                <td>'+value.firstname+' '+value.lastname+'</td>\
+                                <td>'+value.created_at+'</td>\
+                                <td>'+value.user_role.name+'</td>\
+                                <td>\
+                                    <button class="btn px-2" value="'+value.id+'" data-bs-toggle="modal" data-bs-target="#editUser">\
+                                        <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">\
+                                            <use xlink:href="#edit"/>\
+                                        </svg>\
+                                    </button>\
+                                    <button class="btn" value="'+value.id+'">\
+                                        <svg class="bi text-black-50" width="15" height="15" role="img" aria-label="menu">\
+                                            <use xlink:href="#delete"/>\
+                                        </svg>\
+                                    </button>\
+                                </td>\
+                        </tr>');
+                        });
                     },
                 });
             }
@@ -315,6 +314,7 @@
                         $('#success_message').text(data.message);
                         $('#createNewUser').modal('hide');
                         $('#createNewUser').find('input').val("");
+                        getUsers();
                     },
                     error:function (e){
                         if(e.status==422){
