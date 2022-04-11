@@ -25,10 +25,10 @@ class UserRequest extends FormRequest
     {
         if ($this->isMethod('PUT')) {
             return [
-                'employee_id' => 'required|string|unique:users,employee_id,'.request()->route('id'),
-                'email' => 'required|string|email|max:100|unique:users,email,'.request()->route('id'),
-                'username' => 'required|string|unique:users,username,'.request()->route('id'),
-                'phone' => 'required|string|unique:users,phone,'.request()->route('id'),
+                'employee_id' => 'required|string|unique:users,employee_id,'.request()->route('id').',id,deleted_at,NULL',
+                'email' => 'required|string|email|max:100|unique:users,email,'.request()->route('id').',id,deleted_at,NULL',
+                'username' => 'required|string|unique:users,username,'.request()->route('id').',id,deleted_at,NULL',
+                'phone' => 'required|string|unique:users,phone,'.request()->route('id').',id,deleted_at,NULL',
                 'firstname' => 'required|string',
                 'lastname' => 'required|string',
                 'password' => 'nullable|string|confirmed|min:8',
@@ -36,10 +36,10 @@ class UserRequest extends FormRequest
             ];
         }
         return [
-            'employee_id' => 'required|string|unique:users,deleted_at,NULL',
-            'email' => 'required|string|email|max:100|unique:users,deleted_at,NULL',
-            'username' => 'required|string|unique:users,deleted_at,NULL',
-            'phone' => 'required|string|unique:users,deleted_at,NULL',
+            'employee_id' => 'required|string|unique:users,employee_id,NULL,id,deleted_at,NULL',
+            'email' => 'required|string|email|max:100|unique:users,email,NULL,id,deleted_at,NULL',
+            'username' => 'required|string|unique:users,username,NULL,id,deleted_at,NULL',
+            'phone' => 'required|string|unique:users,phone,NULL,id,deleted_at,NULL',
             'firstname' => 'required|string',
             'lastname' => 'required|string',
             'password' => 'required|string|confirmed|min:8',

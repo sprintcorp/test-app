@@ -31,6 +31,7 @@
                 <thead>
                 <tr class="text-black-50 table-header">
                     <th scope="col">Name</th>
+                    <th scope="col"></th>
                     <th scope="col">Create Date</th>
                     <th scope="col">Role</th>
                     <th scope="col">Action</th>
@@ -269,9 +270,12 @@
                         console.log(response.data.data);
                         $('#all-users').html("");
                         $.each(response.data.data,function (key,value){
-
+                            var span_class = value.role == 1 ? 'bg-danger' :  value.role == 2 ? 'bg-info' : value.role == 3 ? 'bg-light' : 'bg-success';
+                            var text_class = value.role == 3 ? 'text-dark' : 'text-light';
                             $('#all-users').append('<tr>\
-                                <td>'+value.firstname+' '+value.lastname+'</td>\
+                                <td class="px-2"><img src="https://res.cloudinary.com/sprintcorp/image/upload/v1649636150/98681_nqrxbt.jpg" alt="mdo" width="20" height="20" class="rounded-circle">\
+                                '+value.firstname+' '+value.lastname+'<br/>'+value.email+'</td>\
+                                <td><span class="badge '+span_class +' '+text_class +'">'+value.user_role.name+'</span></td>\
                                 <td>'+value.created_at+'</td>\
                                 <td>'+value.user_role.name+'</td>\
                                 <td>\
@@ -307,6 +311,7 @@
                         $('#user_id').val(response.data.id);
                         $('#edit_firstname').val(response.data.firstname);
                         $('#edit_lastname').val(response.data.lastname);
+                        $('#edit_password').val("");
                         $('#edit_email').val(response.data.email);
                         $('#edit_username').val(response.data.username);
                         $('#edit_phone').val(response.data.phone);
@@ -343,10 +348,11 @@
                     dataType: 'json',
                     success: function (data) {
                         $('#errorUpdateList').html("");
-                        $('#success_message').addClass('alert alert-success alert-dismissible fade show');
-                        $('#success_message').text(data.message);
+                        // $('#success_message').addClass('alert alert-success alert-dismissible fade show');
+                        // $('#success_message').text(data.message);
                         $('#editUser').modal('hide');
                         $('#editUser').find('input').val("");
+                        swal(data.message, "", "success");
                         getUsers();
                     },
                     error:function (e){
@@ -376,8 +382,9 @@
                     dataType: 'json',
                     success: function (response) {
                         console.log(response)
-                        $('#success_message').addClass('alert alert-success alert-dismissible fade show');
-                        $('#success_message').text(response.message);
+                        // $('#success_message').addClass('alert alert-success alert-dismissible fade show');
+                        // $('#success_message').text(response.message);
+                        swal(response.message, "", "success");
                         getUsers();
                     },
                 });
@@ -410,8 +417,9 @@
                     dataType: 'json',
                     success: function (data) {
                         $('#errorList').html("");
-                        $('#success_message').addClass('alert alert-success alert-dismissible fade show');
-                        $('#success_message').text(data.message);
+                        // $('#success_message').addClass('alert alert-success alert-dismissible fade show');
+                        // $('#success_message').text(data.message);
+                        swal(data.message, "", "success");
                         $('#createNewUser').modal('hide');
                         $('#createNewUser').find('input').val("");
                         getUsers();

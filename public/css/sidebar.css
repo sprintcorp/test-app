@@ -108,6 +108,14 @@ a.nav-link.menu{
     width: 280px;
 }
 
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.5rem;
+    height: 100vh;
+    background: #1a73e8;
+}
 
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {

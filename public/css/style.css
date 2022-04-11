@@ -1,11 +1,4 @@
-.sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3.5rem;
-    height: 100vh;
-    background: #1a73e8;
-}
+
 .page-wrapper {
     margin-left: 3.5rem;
     height: 100vh;
