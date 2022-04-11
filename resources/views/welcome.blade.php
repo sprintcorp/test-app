@@ -122,7 +122,7 @@
 
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="20" height="20" class="rounded-circle">
+                <img src="https://res.cloudinary.com/sprintcorp/image/upload/v1649636150/98681_nqrxbt.jpg" alt="mdo" width="20" height="20" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                 <li><a class="dropdown-item" href="#">New project...</a></li>
