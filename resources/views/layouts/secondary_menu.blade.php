@@ -1,4 +1,4 @@
-<div class="d-none bg-light" id="menu-bar">
+<div class="d-flex bg-light" id="menu-bar">
     <ul class="nav nav-pills flex-column mt-4">
         <li class="nav-item">
             <a href="#" class="nav-link menu link-dark">
